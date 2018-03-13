@@ -1,0 +1,14 @@
+# example for docker-compose.yml
+version: '3'
+services:
+  vocbench3:
+    image: asanchez75/vocbench3:3.0.1 
+    volumes:
+      - ./vocbench3:/data
+    environment:
+      - COLUMNS=236
+      - LINES=66
+      - TERM=xterm
+    ports:
+      - 1979:1979
+
