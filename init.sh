@@ -1,8 +1,12 @@
 #!/bin/bash
-if [ ! -f ./.data_loaded ]; then
-    cp -r /tmp/semanticturkey-3.0/. /data
-   touch ./.data_loaded
+if [ ! -f ./.loaded ]; then
+    cp -r /tmp/semanticturkey-6.0/. /data
+   touch ./.loaded
 fi
 # execute server
-/data/bin/st_server_run
+#chmod u+x /data/bin/karaf
+#bash -c "/data/bin/karaf 2>/dev/null" 
+tmux new -d -s vb3 '/data/bin/karaf'
+sleep infinity
+
 

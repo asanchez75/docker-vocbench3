@@ -2,13 +2,17 @@
 version: '3'
 services:
   vocbench3:
-    image: asanchez75/vocbench3:3.0.1 
+    build: . 
+    container_name: vb3
     volumes:
-      - ./vocbench3:/data
+      - vb3:/data
     environment:
       - COLUMNS=236
       - LINES=66
       - TERM=xterm
     ports:
       - 1979:1979
+volumes:
+  vb3:
+
 
